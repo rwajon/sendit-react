@@ -1,1 +1,3 @@
+[![Build Status](https://travis-ci.org/rwajon/sendit-react.svg?branch=develop)](https://travis-ci.org/rwajon/sendit-react) [![Coverage Status](https://coveralls.io/repos/github/rwajon/sendit-react/badge.svg?branch=develop)](https://coveralls.io/github/rwajon/sendit-react?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/802fe28946d9c3889961/maintainability)](https://codeclimate.com/github/rwajon/sendit-react/maintainability) <a href="https://codeclimate.com/github/rwajon/sendit-react/test_coverage"><img src="https://api.codeclimate.com/v1/badges/802fe28946d9c3889961/test_coverage" /></a>
+
 # sendit-react

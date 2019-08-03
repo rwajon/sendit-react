@@ -8,11 +8,23 @@ import { signin } from '../../actions/user';
 
 export class Signin extends Component {
   state = {
+    errors: {},
     loading: false,
+    message: '',
     form: {
       userName: '',
       password: ''
     }
+  };
+
+  componentWillReceiveProps = (nextProps) => {
+    const { errors } = this.state;
+    this.setState({
+      message: nextProps.message,
+      errors: { ...errors, ...nextProps.errors }
+    });
+
+    return nextProps.message && this.setState({ form: {} });
   };
 
   handleChange = (e) => {
@@ -30,9 +42,9 @@ export class Signin extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { form: { userName, password } } = this.state;
+    const { form } = this.state;
     const { signin } = this.props;
-    signin({ userName, password });
+    signin(form);
   };
 
   render = () => {
@@ -94,7 +106,8 @@ export class Signin extends Component {
 Signin.propTypes = {
   loading: PropTypes.bool,
   signin: PropTypes.func,
-  errors: PropTypes.object
+  errors: PropTypes.object,
+  message: PropTypes.string
 };
 
 const mapStateToProps = ({ user: { signin: { loading, message, errors } } }) => ({
