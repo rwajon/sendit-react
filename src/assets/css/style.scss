@@ -1,0 +1,174 @@
+@import 'padding';
+@import 'margin';
+@import 'modal';
+@import 'text';
+@import 'button';
+@import 'table';
+@import 'input';
+@import 'form';
+@import 'menu';
+
+body {
+  margin: 0;
+  font-family: 'Lucida Grande', 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.border-test {
+  border: solid 2px red !important;
+}
+
+#nav {
+  display: none;
+  background-color: #fbfbfb;
+  border-bottom: solid 0.5px turquoise;
+  z-index: 12;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  background-color: #fafafa !important;
+}
+
+label[class='error'] {
+  color: #a00;
+  font-size: 12px;
+}
+
+.shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}
+
+.smooth-shadow {
+  box-shadow: 0 7px 7px #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-bg {
+  background: #fff;
+}
+
+.badge {
+  background-color: turquoise;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 50%;
+}
+
+.message-error {
+  border-radius: 5px;
+  background-color: #f2dede;
+  color: #a00;
+}
+
+.message-error * {
+  color: #a00;
+}
+
+.message-success {
+  border-radius: 5px;
+  background-color: #c8e5bc;
+  color: #3c763d;
+}
+
+.message-success * {
+  color: #3c763d;
+}
+
+/********************** media query **********************/
+@media screen and (max-width: 768px) {
+  .hidden-xs {
+    display: none;
+  }
+
+  #logo-top {
+    height: 40px;
+    padding: 5px;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  #user-signup,
+  #user-signin,
+  #admin-signup,
+  #admin-signin,
+  #createOrder {
+    width: 80%;
+    margin-left: 5%;
+    padding: 0 15px 15px 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hidden-lg {
+    display: none;
+  }
+
+  #logo-top {
+    height: 45px;
+    padding: 5px;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  #user-signup,
+  #user-signin,
+  #admin-signup,
+  #admin-signin {
+    width: 50%;
+    margin-left: 25%;
+    padding: 0 15px 15px 15px;
+  }
+
+  #createOrder {
+    width: 70%;
+    margin-left: 15%;
+    padding: 0 15px 15px 15px;
+  }
+}

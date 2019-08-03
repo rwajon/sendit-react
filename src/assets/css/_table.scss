@@ -1,0 +1,54 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table-responsive .table thead,
+.table-responsive .table tfoot,
+.table-responsive .table th,
+.table-responsive .table tr,
+.table-responsive .table td {
+  white-space: nowrap;
+}
+
+.table-bordered thead,
+.table-bordered tfoot,
+.table-bordered th,
+.table-bordered tr,
+.table-bordered td {
+  border: solid 1px #ddd;
+}
+
+.table-bordered-top thead,
+.table-bordered-top tfoot,
+.table-bordered-top th,
+.table-bordered-top tr,
+.table-bordered-top td {
+  border-top: solid 1px #ddd;
+}
+
+.table-bordered-bottom thead,
+.table-bordered-bottom tfoot,
+.table-bordered-bottom th,
+.table-bordered-bottom tr,
+.table-bordered-bottom td {
+  border-bottom: solid 1px #ddd;
+}
+
+.table-hover tr:hover {
+  background-color: #eee;
+}
+
+.table-head {
+  background-color: #eee;
+  color: #000;
+}
+
+.table th,
+.table td {
+  padding: 15px 5px;
+}

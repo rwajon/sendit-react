@@ -1,0 +1,23 @@
+.input {
+  margin-bottom: 15px;
+}
+
+input[class*='error'] {
+  background-color: #f2dede;
+  background-image: linear-gradient(to bottom, #f2dede 0, #e7c3c3 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .input-responsive {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input-responsive {
+    display: inline-block;
+    width: 45%;
+    margin-right: 3%;
+  }
+}

@@ -1,0 +1,50 @@
+.btn {
+  font-size: medium;
+  margin: 2px;
+  color: #000;
+  text-decoration-line: none;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-default {
+  background-color: #fbfbfb;
+  border: solid 1px #aaa;
+}
+
+.btn-warning {
+  color: #fff;
+  font-weight: bold;
+  background-color: #f0ad4e;
+}
+
+.btn-success {
+  color: #fff;
+  font-weight: bold;
+  background-color: #5cb85c;
+}
+
+.btn-danger {
+  color: #fff;
+  font-weight: bold;
+  background-color: #a00;
+}
+
+.btn-blue {
+  color: #fff;
+  font-weight: bold;
+  background-color: #337ab7;
+}
+
+.btn-turquoise {
+  color: #fff;
+  font-weight: bold;
+  background-color: turquoise;
+}
+
+.btn-loading-img {
+  height: 25px;
+  vertical-align: top;
+  margin-top: -5px;
+}

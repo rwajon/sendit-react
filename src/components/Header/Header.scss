@@ -1,0 +1,65 @@
+.Header {
+  border-top: solid 2px turquoise;
+  border-bottom: solid 1px turquoise;
+  background-color: #fff;
+  z-index: 12;
+
+  #user-top {
+    color: #000;
+    text-decoration-line: none;
+    float: right;
+    margin: 4px 4px 0 0;
+  }
+
+  #admin-top {
+    color: #000;
+    text-decoration-line: none;
+    float: right;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    margin-right: 2px;
+    padding: 0 2px;
+  }
+
+  #user-top:hover,
+  #admin-top:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #user-top b {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 18px;
+  }
+
+  #admin-top b {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 21px;
+  }
+
+  #top-user-picture {
+    height: 40px;
+    padding: 2px;
+    border: solid 1px #ccc;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Header {
+    #logo-top {
+      height: 40px;
+      padding: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Header {
+    #logo-top {
+      height: 45px;
+      padding: 5px;
+    }
+  }
+}
