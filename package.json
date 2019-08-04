@@ -9,6 +9,7 @@
     "build": "webpack --mode production",
     "test": "jest",
     "test:coverage": "jest --watchAll \"-- --coverage\"",
+    "test:CI": "CI=true jest \"-- --coverage\"",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "lint": "eslint . --fix"
   },
@@ -21,11 +22,11 @@
   "bugs": {
     "url": "https://github.com/rwajon/sendit-react/issues"
   },
-  "homepage": "https://github.com/rwajon/sendit-react#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "axios": "^0.19.0",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
     "enzyme": "^3.10.0",
@@ -45,7 +46,8 @@
     "sass-loader": "^7.1.0",
     "serve": "^11.1.0",
     "webpack": "^4.39.0",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -71,5 +73,19 @@
     "redux-mock-store": "^1.5.3",
     "style-loader": "^0.23.1",
     "webpack-dev-server": "^3.7.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/**/*.js",
+      "!<rootDir>/webpack.config.js",
+      "!<rootDir>/node_modules",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/coverage/**/*.*",
+      "!<rootDir>/build/**/*.*"
+    ],
+    "moduleNameMapper": {
+      "\\.(png|svg|jpg|gif|ttf|woff|woff2|eot)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   }
 }

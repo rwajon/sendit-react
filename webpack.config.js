@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const envConfig = require('./config/env.config');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
@@ -47,7 +49,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
+    contentBase: path.join(__dirname, 'public'),
     port: envConfig.PORT,
     publicPath: '/',
     historyApiFallback: true,
@@ -58,6 +60,19 @@ module.exports = {
     htmlWebpackPlugin,
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new Dotenv()
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    new Dotenv({ path: path.resolve(__dirname, '.env') }),
+    new ManifestPlugin(),
+    new CopyPlugin([
+      { from: path.join(__dirname, 'public/', 'css/'), to: path.join(__dirname, 'build', 'css/') },
+      {
+        from: path.join(__dirname, 'public/', 'webfonts/'),
+        to: path.join(__dirname, 'build', 'webfonts/')
+      },
+      {
+        from: path.join(__dirname, 'public/', 'icon.png'),
+        to: path.join(__dirname, 'build', 'icon.png')
+      }
+    ])
   ]
 };

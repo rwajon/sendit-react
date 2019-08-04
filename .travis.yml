@@ -1,0 +1,20 @@
+env:
+  global:
+    - NODE_ENV=test
+    - APP_URL_BACKEND=http://localhost:3000
+    - APP_URL_FRONTEND=http://localhost:5000
+    - CC_TEST_REPORTER_ID=8ab6142cd9d8643d32b8c937558eb03914bd0448232b1453c47aa688e943e9fa
+language: node_js
+node_js:
+  - 'stable'
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - npm run test:CI
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+after_success:
+  - npm run coveralls
+
