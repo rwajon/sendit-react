@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import './Layout.scss';
 import Header from '../Header';
 import Footer from '../Footer';
-import { clearUserStore } from '../../actions/user';
 
 export class Layout extends Component {
   state = { style: { minHeight: window.innerHeight, width: '100%', marginTop: '-14px' } };
@@ -18,8 +17,6 @@ export class Layout extends Component {
 
   componentWillUnmount = () => {
     window.scrollTo(0, 0);
-    const { clearUserStore } = this.props;
-    clearUserStore();
   };
 
   render() {
@@ -37,9 +34,6 @@ export class Layout extends Component {
   }
 }
 
-Layout.propTypes = { children: PropTypes.any, clearUserStore: PropTypes.func };
+Layout.propTypes = { children: PropTypes.any };
 
-export default connect(
-  null,
-  { clearUserStore }
-)(Layout);
+export default connect(null)(Layout);
