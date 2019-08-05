@@ -1,9 +1,12 @@
 export default (Object.user = {
   firstName: 'John',
   lastName: 'Smith',
-  username: 'josmi',
+  userName: 'josmi',
   email: 'josmi@email.com',
-  image: 'image.jpg'
+  phone: '078111111',
+  country: 'USA',
+  city: 'New-York',
+  address: 'Central Park Av'
 });
 
 export const userToRegister = {
