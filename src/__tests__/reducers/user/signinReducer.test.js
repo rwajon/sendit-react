@@ -22,7 +22,7 @@ describe('Sign-in reducers', () => {
 
     expect(reducer.profile).toHaveProperty('firstName');
     expect(reducer.profile).toHaveProperty('lastName');
-    expect(reducer.profile).toHaveProperty('username');
+    expect(reducer.profile).toHaveProperty('userName');
     expect(reducer.profile).toHaveProperty('email');
   });
 

@@ -13,15 +13,23 @@ export default (state, { type, payload }) => {
         signup: { ...state.signup, loading: false }
       };
     case userActionsTypes.SIGNUP_USER_SUCCESS:
+      localStorage.user = JSON.stringify(payload.newUser);
+      localStorage.token = payload.token;
       return {
         ...state,
-        profile: payload.user,
+        isAuth: true,
+        profile: payload.newUser,
+        token: payload.token,
         signup: { loading: false, message: payload.message, errors: {} }
       };
     case userActionsTypes.SIGNUP_USER_FAILURE:
       return {
         ...state,
-        signup: { loading: false, message: '', errors: { ...payload.errors } }
+        signup: {
+          loading: false,
+          message: '',
+          errors: { message: payload.error, ...payload.errors }
+        }
       };
     default:
       return null;
